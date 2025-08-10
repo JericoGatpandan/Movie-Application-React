@@ -4,6 +4,6 @@ import tailwindcss from '@tailwindcss/vite'
 
 // https://vite.dev/config/
 export default defineConfig({
-  base: '/movie-app-react/',
+  base: '/Movie-Application-React/',
   plugins: [react(), tailwindcss()],
 })
