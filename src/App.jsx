@@ -37,13 +37,13 @@ const App = () => {
         throw new Error('Failed to fetch movies');
       }
       const data = await response.json();
-      if (data.response === 'False') {
+      if (data.Response === 'False') {
         setErrorMessage(data.Error || 'Failed to fetch movies');
         setMovieList([]);
       }
       setMovieList(data.results || []);
 
-      if (query && data.results.lenght > 0) {
+      if (query && data.results.length > 0) {
         await updateSearchCount(query, data.results[0]);
       }
     } catch (error) {
@@ -83,8 +83,8 @@ const App = () => {
           <Search searchTerm={searchTerm} setSearchTerm={setSearchTerm} />
         </header>
 
-        {trendingMovies.lenght > 0 && (
-          <section className="rending">
+        {trendingMovies.length > 0 && (
+          <section className="trending">
             <h2>Trending Movies</h2>
             <ul>
               {trendingMovies.map((movie, index) => (
